@@ -14,14 +14,16 @@ namespace SimpleMVVM.Client.ViewModels
     public class FetchDataViewModel : IFetchDataViewModel
     {
         private WeatherForecast[] _weatherForecasts;
+        private IFetchDataViewModel _fetchDataViewModel;
         public WeatherForecast[] WeatherForecasts
         {
             get => _weatherForecasts;
             set => _weatherForecasts = value;
         }
-        public FetchDataViewModel()
+        public FetchDataViewModel(IFetchDataViewModel fetchDataViewModel)
         {
             Console.WriteLine("FetchDataViewModel Constructor Executing");
+            _fetchDataViewModel = fetchDataViewModel;
         }
     }
 }
